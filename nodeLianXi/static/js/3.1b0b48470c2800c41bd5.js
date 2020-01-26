@@ -1,0 +1,2 @@
+webpackJsonp([3],{MGC1:function(e,t,i){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",[this._m(0),this._v(" "),t("router-view")],1)},staticRenderFns:[function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticStyle:{display:"flex","flex-direction":"row"}},[t("div",[this._v("代理项目")]),this._v(" "),t("div",[this._v("新房库")])])}]},n=i("C7Lr")(null,r,!1,null,null,null);t.default=n.exports}});
+//# sourceMappingURL=3.1b0b48470c2800c41bd5.js.map

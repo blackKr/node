@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script rel="script" src="./ajax.js"></script>
+</head>
+<body>
+  用户：<input type="text" id="user"><br>
+  密码：<input type="password" id="pass"><br>
+  <input type="button" value="注册" id="reg_btn">
+  <input type="button" value="登陆" id="login_btn">
+</body>
+<script type="text/javascript">
+  window.onload = function () {
+
+		let textUser = document.getElementById('user');
+    let textPass = document.getElementById('pass');
+    let textReg = document.getElementById('reg_btn');
+    let textLogin = document.getElementById('login_btn');
+
+    textLogin.onclick = function () {
+			ajax({
+				url: './user',
+				data: {act: 'login', user: textUser.value, pass: textPass.value},
+				type: 'post',
+				success: (res) => {
+					let json = eval('(' + res + ')');
+					if (json.ok) {
+						alert('登陆成功');
+					} else {
+						alert('登陆失败' + json.msg);
+					}
+				},
+				error: (err) => {
+					alert('通信错误');
+				}
+			});
+		};
+
+    textReg.onclick = function () {
+      ajax({
+        url:'./user',
+        data:{act:'reg',user:textUser.value,pass:textPass.value},
+        type:'get',
+        success:(res) => {
+        	let json = eval('('+ res + ')');
+        	if ( json.ok ) {
+        		alert('注册成功');
+          } else {
+        		alert('注册失败' + json.msg );
+          }
+        },
+        error:(err) => {
+        	alert('通信错误');
+        }
+      });
+		}
+	}
+</script>
+</html>

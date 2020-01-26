@@ -1,0 +1,2 @@
+webpackJsonp([2],{IGx0:function(t,e,s){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r={render:function(){var t=this.$createElement,e=this._self._c||t;return e("div",[e("el-row",[e("el-button",{attrs:{type:"primary"}},[this._v("楼盘管理")]),this._v(" "),e("el-button",{attrs:{type:"success"}},[this._v("客户管理")]),this._v(" "),e("el-button",{attrs:{type:"info"}},[this._v("商户管理")])],1),this._v(" "),e("router-view")],1)},staticRenderFns:[]},n=s("C7Lr")(null,r,!1,null,null,null);e.default=n.exports}});
+//# sourceMappingURL=2.93318a7f2a3cad2ca16b.js.map
