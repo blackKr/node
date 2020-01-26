@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+
+<input name="username" placeholder="请输入用户名" value="admin">
+<input name="password" placeholder="请输入密码" value="123456">
+<div class="login">登录</div>
+<div class="reg">注册</div>
+
+<script src="./jquery.min.js"></script>
+<script>
+    $(".login").on("click", () => {
+        let [username, password] = [
+            $("input[name=username]").val(),
+            $("input[name=password]").val()
+        ];
+        $.ajax({
+            method: "GET",
+            url: "http://localhost:8888/login",
+            data: {
+                username,
+                password
+            },
+            dataType: "json",
+            success: (res) => {
+                console.error(res);
+                if (res.code !== 200) {
+                    alert(res.msg);
+                }else {
+                    alert(res.msg);
+                }
+            }
+        })
+    });
+    $(".reg").on("click", () => {
+        let [username, password] = [
+            $("input[name=username]").val(),
+            $("input[name=password]").val()
+        ];
+        $.ajax({
+            method: "post",
+            url: "http://localhost:8888/reg",
+            data: {
+                username,
+                password
+            },
+            dataType: "json",
+            success: (res) => {
+                console.error(res);
+                if (res.code !== 200) {
+                    alert(res.msg);
+                } else {
+                    alert(res.msg);
+                }
+            }
+        })
+    });
+</script>
+</body>
+</html>
